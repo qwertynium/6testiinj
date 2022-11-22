@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        double sumN = 1;
+        double sumE = 0;
+        double sumE10 = 0;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите значение n");
+        double n = sc.nextDouble();
+        System.out.println("Введите значение e");
+        double e = sc.nextDouble();
+        System.out.println("Введите значение x");
+        double x = sc.nextDouble();
+        int elementIndexs = 0;
+        for(int i = 1; i < n  ; i++){
+            if (elementIndexs < n){
+                elementIndexs++;
+                sumN += Math.pow(-1, i) * Math.pow(x, i);
+            }
+            if (Math.abs(sumN) > e){
+                sumE += sumN;
+            } if (Math.abs(sumN) > e/10){
+                sumE10 += sumN;
+            }
+        }
+        System.out.println("Сумма n слагаемых данного вида: " + sumN);
+        System.out.println("Сумма тех слагаемых, которые по абсолютной величине больше e: "+sumE);
+        System.out.println("Сумма тех слагаемых, которые по абсолютной величине больше e:  "+sumE10);
+
+
+    }
+}
